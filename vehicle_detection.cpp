@@ -9,10 +9,28 @@ CvMemStorage            *storage;
 
 void detect(IplImage *img);
 
+// DEFINE_int32(vid,2,"which video to test")
+// string vid;
+// bool select_video(){
+//   switch(FLAGS_video){
+//         case 1:    {vid = "/Users/qizhou/Documents/Videos/chile_camera.mp4";break;}
+//         case 2:    {vid = "/Users/qizhou/Documents/Videos/Adams/adams.flv";break;}
+//         case 3:    {vid = "/Users/qizhou/Documents/Videos/youtube0_myedit.avi";break;}
+//         case 4:    {vid = "/Users/qizhou/Documents/Videos/Alfred1.mov";break;}
+//         case 5:    {vid = "/Users/qizhou/Documents/Videos/Alfred2.avi";break;}
+//         case 6:    {vid = "/Users/qizhou/Documents/Videos/Admobilize_short.mp4";break;}
+//         case 7:    {vid = "/Users/qizhou/Documents/Videos/AdBeacon_night.avi";break;}
+//         case 8:    {vid = "/Users/qizhou/Documents/Videos/Julio_short.avi";break;}
+//         case 9:    {vid = "/Users/qizhou/Documents/Videos/Video Recording 15-30.mov";break;}
+//         case 10:   {vid = "/Users/qizhou/Documents/Videos/video2.avi";break;}
+//         case 11:   {vid = "/Users/qizhou/Documents/Videos/video2.flv";break;}
+//         case 12:   {vid = "/Users/qizhou/Documents/Videos/video2.mov";break;}
+//     }
+// }
+
 int main(int argc, char** argv)
 {
   std::cout << "Using OpenCV " << CV_MAJOR_VERSION << "." << CV_MINOR_VERSION << "." << CV_SUBMINOR_VERSION << std::endl;
-  
   CvCapture *capture;
   IplImage  *frame;
   int input_resize_percent = 100;
@@ -81,7 +99,7 @@ void detect(IplImage *img)
     1.1, //1.1,//1.5, //-------------------SCALE FACTOR
     1, //2        //------------------MIN NEIGHBOURS
     0, //CV_HAAR_DO_CANNY_PRUNING
-    cvSize(0,0),//cvSize( 30,30), // ------MINSIZE
+    cvSize(50,50),//cvSize( 30,30), // ------MINSIZE
     img_size //cvSize(70,70)//cvSize(640,480)  //---------MAXSIZE
     );
 
